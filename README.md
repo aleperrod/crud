@@ -22,10 +22,10 @@ Aplicativo de demonstração das funcionalidades CRUD: create, read, update & de
 - Typescript
 - Tailwind CSS.
 
-## Mão na Massa!
+## Mãos à Obra!
 
 ### Clone este repositório
-git clone https://github.com/aleperrod/crud.git
+> git clone https://github.com/aleperrod/crud.git
 
 ### Acesse a pasta do projeto no terminal/cmd
 > cd crud
