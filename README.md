@@ -13,7 +13,7 @@ Aplicativo de demonstração das funcionalidades CRUD: create, read, update & de
 # Tecnologias
 
 - Google Firebase
-- Tailind CSS.
+- Tailwind CSS.
 
 # Frameworks e Bibliotecas
 
@@ -34,4 +34,4 @@ Aplicativo de demonstração das funcionalidades CRUD: create, read, update & de
 > npm install
 
 ### Execute a aplicação em modo de desenvolvimento
-> npm start
+> npm run dev
