@@ -1,32 +1,23 @@
-import { useState } from "react";
 import Botao from "../components/Botao";
 import Formulario from "../components/Formulário";
 import Layout from "../components/Layout";
 import Tabela from "../components/Tabela";
-import Cliente from "../core/Cliente";
+import useClientes from "../hooks/useClientes";
 
 
 export default function Home() {
-  const clientes = [
-    new Cliente('Ana', 31, '1'),
-    new Cliente('Paulo', 32, '2'),
-    new Cliente('Silas', 41, '3'),
-    new Cliente('Aécio', 54, '4'),
-  ]
 
-  function clienteSelecionado(cliente: Cliente){
-    console.log(cliente.nome)
-  }
-
-  function clienteExcluido(cliente: Cliente){
-    console.log(cliente.nome)
-  }
-
-  function salvarCliente(cliente: Cliente){
-    console.log(cliente)
-  }
+  const {
+    tabelaVisivel,
+    exibirTabela,
+    cliente,
+    clientes,
+    novoCliente,
+    salvarCliente,
+    selecionarCliente,
+    excluirCliente
+  } = useClientes()
   
-  const [visivel, setVisivel] = useState<'tabela' | 'form'>('tabela')
 
   return (
     <div className={`
@@ -35,18 +26,18 @@ export default function Home() {
       text-white
     `}>
       <Layout titulo="Cadastro Simples">
-        {visivel === 'tabela' ? (
+        {tabelaVisivel ? (
           <>
             <div className="flex justify-end">
-              <Botao onClick={() => setVisivel('form')} cor='green' className="mb-4">Novo Cliente</Botao>
+              <Botao onClick={novoCliente} cor='green' className="mb-4">Novo Cliente</Botao>
             </div>
             <Tabela clientes={clientes}
-              clienteSelecionado={clienteSelecionado}
-              clienteExcluido={clienteExcluido}
+              clienteSelecionado={selecionarCliente}
+              clienteExcluido={excluirCliente}
             />
           </>
         ) : (
-          <Formulario clienteMudou={salvarCliente} cliente={clientes[2]} cancelado={() => setVisivel('tabela')}/>
+          <Formulario clienteMudou={salvarCliente} cliente={cliente} cancelado={exibirTabela}/>
         )}
       </Layout>
     </div>

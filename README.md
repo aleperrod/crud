@@ -4,7 +4,7 @@ Aplicativo de demonstração das funcionalidades CRUD: create, read, update & de
 
 # Front End
 
-- Tabela estilizada, exibindo dados de clientes, com as opções de editar e excluir.
+- Tabela e formulário com estilo agradável, construídos com componentes feitos em NestJS, exibindo dados de clientes, com as opções de editar e excluir.
 
 # Back End
 
